@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using TypeUser.Models;
 using Newtonsoft.Json;
+using TypeUser.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,17 +18,9 @@ namespace TypeUser.Views
         public AlbumListe()
         {
             InitializeComponent();
-        }
-        public async void TousLesAlbums()
-        {
-            string ApiUrl = "https://jsonplaceholder.typicode.com/albums";
-            var uri = new Uri(ApiUrl);
-            HttpClient client = new HttpClient();
-            var reponse = await client.GetStringAsync(uri);
-            var contente = JsonConvert.DeserializeObject<List<Users>>(reponse).ToArray();
-            Albumliste.ItemsSource = contente;
-        }
-
+            AlbumModel album = new AlbumModel();
+            album.TousLesAlbums(Albumliste);
+        }        
         private void Albumliste_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var item = (Albums)e.Item;

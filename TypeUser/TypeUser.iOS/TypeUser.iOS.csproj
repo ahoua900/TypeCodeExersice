@@ -133,4 +133,19 @@
       <Name>TypeUser</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\swipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\man.png" />
+  </ItemGroup>
 </Project>

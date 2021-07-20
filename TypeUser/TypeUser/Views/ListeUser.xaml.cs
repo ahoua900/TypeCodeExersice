@@ -6,6 +6,7 @@ using TypeUser.Models;
 using Newtonsoft.Json;
 using System.Text;
 using System.Threading.Tasks;
+using TypeUser.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,18 +18,10 @@ namespace TypeUser.Views
         public ListeUser()
         {
             InitializeComponent();
-            TousLesUsers();
+            UserListe userListe = new UserListe();
+            userListe.TousLesUsers(Userliste);
         }
-        public async void TousLesUsers()
-        {
-            string ApiUrl = "https://jsonplaceholder.typicode.com/users";
-            var uri = new Uri(ApiUrl);
-            HttpClient client = new HttpClient();
-            var reponse = await client.GetStringAsync(uri);
-            var contente = JsonConvert.DeserializeObject<List<Users>>(reponse).ToArray();
-            Userliste.ItemsSource = contente;
-        }
-
+        
         private void Userliste_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var item = (Users)e.Item;
