@@ -18,14 +18,7 @@ namespace TypeUser.Views
         public ListeUser()
         {
             InitializeComponent();
-            UserListe userListe = new UserListe();
-            userListe.TousLesUsers(Userliste);
         }
         
-        private void Userliste_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var item = (Users)e.Item;
-            Navigation.PushAsync(new Singleuser(item));
-        }
     }
 }

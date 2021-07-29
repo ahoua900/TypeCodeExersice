@@ -18,13 +18,7 @@ namespace TypeUser.Views
         public AlbumListe()
         {
             InitializeComponent();
-            AlbumModel album = new AlbumModel();
-            album.TousLesAlbums(Albumliste);
         }        
-        private void Albumliste_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var item = (Albums)e.Item;
-            Navigation.PushAsync(new SingleAlbum(item));
-        }
+        
     }
 }

@@ -1,37 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TypeUser.ViewModel"
              x:Class="TypeUser.Views.Singleuser">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="White" Padding="5">
-                <Image Source="swipe" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout Padding="2" Margin="3">
-                    <Grid RowSpacing="10">
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Name :" Grid.Row="0" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="name" FontAttributes="Italic" FontSize="13" Text="" Grid.Row="0" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Username :" Grid.Row="1" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="username" FontAttributes="Italic" FontSize="13"  Grid.Row="1" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Email :" Grid.Row="2" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="email" FontAttributes="Italic" FontSize="13"  Grid.Row="2" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Phone :" Grid.Row="3" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="phone" FontAttributes="Italic" FontSize="13"  Grid.Row="3" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Website :" Grid.Row="4" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="website" FontAttributes="Italic" FontSize="13" Grid.Row="4" Grid.Column="1"/>
-                    </Grid>
-                    <Label Text="Adress" FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalOptions="StartAndExpand"/>
-                    <Grid RowSpacing="10">
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Street :" Grid.Row="0" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="street" FontAttributes="Italic" FontSize="13" Text="" Grid.Row="0" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Suite :" Grid.Row="1" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="suite" FontAttributes="Italic" FontSize="13"  Grid.Row="1" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="City :" Grid.Row="2" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="city" FontAttributes="Italic" FontSize="13"  Grid.Row="2" Grid.Column="1"/>
-                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="ZipCode :" Grid.Row="3" Grid.Column="0"/>
-                        <Label TextColor="Black" x:Name="zipcode" FontAttributes="Italic" FontSize="13"  Grid.Row="3" Grid.Column="1"/>
-                    </Grid>
-                </StackLayout>
+        <StackLayout BackgroundColor="White" Padding="5">
+            <Image Source="swipe" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="150"/>
+            <StackLayout Padding="2" Margin="3">
+                <Grid RowSpacing="10">
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Name :" Grid.Row="0" Grid.Column="0"/>
+                    <Label TextColor="Black" Text="{Binding Name}" FontAttributes="Italic" FontSize="13" Grid.Row="0" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Username :" Grid.Row="1" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding Username}" FontAttributes="Italic" FontSize="13"  Grid.Row="1" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Email :" Grid.Row="2" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding Email}" FontAttributes="Italic" FontSize="13"  Grid.Row="2" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Phone :" Grid.Row="3" Grid.Column="0"/>
+                    <Label TextColor="Black" Text="{Binding Phone}" FontAttributes="Italic" FontSize="13"  Grid.Row="3" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Website :" Grid.Row="4" Grid.Column="0"/>
+                            <Label TextColor="Black" Text="{Binding Website}" FontAttributes="Italic" FontSize="13" Grid.Row="4" Grid.Column="1"/>
+                </Grid>
+                <Label Text="Adress" FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                <Grid RowSpacing="10">
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Street :" Grid.Row="0" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding Street}" FontAttributes="Italic" FontSize="13"  Grid.Row="0" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="Suite :" Grid.Row="1" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding Suite}" FontAttributes="Italic" FontSize="13"  Grid.Row="1" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="City :" Grid.Row="2" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding City}" FontAttributes="Italic" FontSize="13"  Grid.Row="2" Grid.Column="1"/>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="ZipCode :" Grid.Row="3" Grid.Column="0"/>
+                        <Label TextColor="Black" Text="{Binding ZipCode}" FontAttributes="Italic" FontSize="13"  Grid.Row="3" Grid.Column="1"/>
+                </Grid>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
+    </ScrollView>
     </ContentPage.Content>
+    
 </ContentPage>

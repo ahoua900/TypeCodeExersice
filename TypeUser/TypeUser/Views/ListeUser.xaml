@@ -1,34 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TypeUser.ViewModel"
              x:Class="TypeUser.Views.ListeUser" NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout BackgroundColor="Black" Padding="5">
-                <Label Text="Utilisateurs" 
+    <ContentPage.BindingContext>
+        <local:UserListe/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout BackgroundColor="Black" Padding="5">
+            <Label Text="Utilisateurs" 
                    FontSize="20" HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold"/>
-                <Frame CornerRadius="12" Margin="2"
+            <Frame CornerRadius="12" Margin="2"
                    Padding="3">
-                    <ListView x:Name="Userliste" ItemTapped="Userliste_ItemTapped">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout BackgroundColor="#343434" Padding="2" Margin="3">
-                                        <Grid RowSpacing="10">
-                                            <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Username}" Grid.Row="0" Grid.Column="0"/>
-                                            <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Phone}" Grid.Row="0" Grid.Column="2"/>
-                                            <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Email}" Grid.Row="1" Grid.Column="0"/>
-                                            <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Website}" Grid.Row="1" Grid.Column="2"/>
-                                        </Grid>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Frame>
-            </StackLayout>
-        </ScrollView>
-       
-    </ContentPage.Content>
+                <ListView ItemsSource="{Binding AllUsers}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#343434" Padding="2" Margin="3">
+                                    <Grid RowSpacing="10">
+                                        <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Username}" Grid.Row="0" Grid.Column="0"/>
+                                        <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Phone}" Grid.Row="0" Grid.Column="2"/>
+                                        <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Email}" Grid.Row="1" Grid.Column="0"/>
+                                        <Label TextColor="White" FontAttributes="Bold" FontSize="13" Text="{Binding Website}" Grid.Row="1" Grid.Column="2"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
