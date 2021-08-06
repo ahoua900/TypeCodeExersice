@@ -11,24 +11,19 @@ using System.Text;
 namespace TypeUser.ViewModel
 {
     public class ListeUserViewModel : BaseViewModel
-    {
-        public ListeUserViewModel()
-        {         
-            LoadAllUsers();
-        }
-        public ObservableCollection<Users> _allUsers;
+    {       
         public ObservableCollection<Users> AllUsers
         {
-            get { return _allUsers; }
-            set
-            {
-                _allUsers = value;
-                OnPropertyChanged();
-            }
+            get => Get<ObservableCollection<Users>>();
+            set => Set(value);
+        }
+        public ListeUserViewModel()
+        {
+            AllUsers = new ObservableCollection<Users>();
+            LoadAllUsers();
         }
         public async void LoadAllUsers()
-        {
-           AllUsers = new ObservableCollection<Users>();
+        {         
             string ApiUrl = "https://jsonplaceholder.typicode.com/users";
             var uri = new Uri(ApiUrl);
             HttpClient client = new HttpClient();

@@ -7,7 +7,7 @@
         <local:AlbumListeViewModel/>
     </ContentPage.BindingContext>
     <ScrollView>
-        <StackLayout BackgroundColor="Black" Padding="5">
+        <StackLayout BackgroundColor="#242424" Padding="5">
             <Label Text="Albums" 
                    FontSize="20" HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold"/>
@@ -17,8 +17,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout BackgroundColor="#242424" Margin="3">
-                                    <Label Text="{Binding Title}" TextColor="White" FontSize="18" FontAttributes="Italic" HorizontalOptions="Center"/>
+                                <StackLayout  Margin="3">
+                                    <Label Text="{Binding Albums.Title}" TextColor="Black" FontSize="18" FontAttributes="Italic" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

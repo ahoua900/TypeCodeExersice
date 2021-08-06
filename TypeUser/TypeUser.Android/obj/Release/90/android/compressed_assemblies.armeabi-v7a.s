@@ -172,7 +172,7 @@
 
 	/* 16: TypeUser.dll */
 	/* uncompressed_file_size */
-	.long	35840
+	.long	36864
 	/* loaded */
 	.byte	0
 	/* data */
@@ -550,7 +550,7 @@
 
 	/* 58: mscorlib.dll */
 	/* uncompressed_file_size */
-	.long	2106368
+	.long	2107392
 	/* loaded */
 	.byte	0
 	/* data */

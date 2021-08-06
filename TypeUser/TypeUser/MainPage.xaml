@@ -5,9 +5,9 @@
 
     <ScrollView>
         <StackLayout>
-            <Image Source="welcome" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="210"/>
+            <Image Source="welcome" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="210" Margin="5"/>
             <Button Text="start..." BackgroundColor="Black" TextColor="White" CornerRadius="50" HorizontalOptions="CenterAndExpand"
-                    WidthRequest="150" VerticalOptions="EndAndExpand" Margin="8" Clicked="Button_Clicked"/>
+                    WidthRequest="150" VerticalOptions="EndAndExpand" Margin="10" Clicked="Button_Clicked"/>
         </StackLayout>
     </ScrollView>
 

@@ -152,7 +152,7 @@
 
 	/* 16: TypeUser.dll */
 	/* uncompressed_file_size */
-	.word	35840
+	.word	36864
 	/* loaded */
 	.byte	0
 	/* data */
@@ -530,7 +530,7 @@
 
 	/* 58: mscorlib.dll */
 	/* uncompressed_file_size */
-	.word	2106368
+	.word	2107392
 	/* loaded */
 	.byte	0
 	/* data */

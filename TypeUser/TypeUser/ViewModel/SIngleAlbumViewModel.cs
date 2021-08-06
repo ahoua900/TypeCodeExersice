@@ -10,29 +10,25 @@ namespace TypeUser.ViewModel
 {
     public class SIngleAlbumViewModel : BaseViewModel
     {
-       public SIngleAlbumViewModel(Albums albums)
+      
+        public Albums Album
         {
+            get => Get<Albums>();
+            set => Set(value);
+        }
+        public SIngleAlbumViewModel(Albums albums)
+        {
+            Album = new Albums();
             LoadOneAlbum(albums.Id);
-        }        
-        public Albums _albums;
-        public Albums Albums
-        {
-            get { return _albums; }
-            set
-            {
-                _albums = value;
-                OnPropertyChanged();
-            }
         }
         public async void LoadOneAlbum(int id)
         {
-            Albums = new Albums();
             string ApiUrl = "https://jsonplaceholder.typicode.com/albums/" + id.ToString();
             var uri = new Uri(ApiUrl);
             HttpClient client = new HttpClient();
             var reponse = await client.GetStringAsync(uri);
             var contente = JsonConvert.DeserializeObject<Albums>(reponse);
-            Albums = contente;
+            Album = contente;
         }
     }
 }

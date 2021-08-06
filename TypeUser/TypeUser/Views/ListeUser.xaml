@@ -7,22 +7,22 @@
         <local:ListeUserViewModel/>
     </ContentPage.BindingContext>
     <ScrollView>
-        <StackLayout BackgroundColor="Black" Padding="5">
+        <StackLayout BackgroundColor="#242424" Padding="5">
             <Label Text="Utilisateurs" 
                    FontSize="20" HorizontalOptions="StartAndExpand"
                    FontAttributes="Bold" TextColor="White"/>
             <Frame CornerRadius="12" Margin="2"
                    Padding="3">
-                <ListView ItemsSource="{Binding AllUsers}" RowHeight="150">
+                <ListView ItemsSource="{Binding AllUsers}" RowHeight="170">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout BackgroundColor="White" Padding="2" Margin="3">
                                     <Grid RowSpacing="10">
-                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Username}" Grid.Row="0" Grid.Column="0"/>
-                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Phone}" Grid.Row="0" Grid.Column="1"/>
-                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Email}" Grid.Row="1" Grid.Column="0"/>
-                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Website}" Grid.Row="1" Grid.Column="1"/>
+                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Users.Username}" Grid.Row="0" Grid.Column="0"/>
+                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Users.Phone}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Users.Email}" Grid.Row="1" Grid.Column="0"/>
+                                        <Label TextColor="Black" FontAttributes="Bold" FontSize="13" Text="{Binding Users.Website}" Grid.Row="1" Grid.Column="1"/>
                                     </Grid>
                                 </StackLayout>
                             </ViewCell>
