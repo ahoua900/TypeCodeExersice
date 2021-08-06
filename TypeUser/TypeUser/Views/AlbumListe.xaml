@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:TypeUser.ViewModel"
              x:Class="TypeUser.Views.AlbumListe" NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
-        <local:AlbumModel/>
+        <local:AlbumListeViewModel/>
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout BackgroundColor="Black" Padding="5">
@@ -13,12 +13,12 @@
                    FontAttributes="Bold"/>
             <Frame CornerRadius="12" Margin="4"
                    Padding="3">
-                <ListView x:Name="Albumliste" ItemsSource="{Binding AllAlbums}">
+                <ListView x:Name="Albumliste" ItemsSource="{Binding AllAlbums}" RowHeight="100">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout BackgroundColor="#242424" Margin="3">
-                                    <Label Text="{Binding Title}" TextColor="White" FontSize="18" FontAttributes="Italic" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Title}" TextColor="White" FontSize="18" FontAttributes="Italic" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

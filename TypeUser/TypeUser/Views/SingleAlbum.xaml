@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="White" Padding="5">
                 <Image Source="mail" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="200"/>
-                <Label  FontAttributes="Bold" FontSize="15" Text="{Binding Title}" HorizontalOptions="Center"/>
+                <Label  FontAttributes="Bold" FontSize="15" Text="{Binding Albums.Title}" HorizontalOptions="Center"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TypeUser.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Text;
 
 namespace TypeUser.ViewModel
@@ -11,8 +12,8 @@ namespace TypeUser.ViewModel
     {
        public SIngleAlbumViewModel(Albums albums)
         {
-            OneAlbum(albums.Id);
-        }
+            LoadOneAlbum(albums.Id);
+        }        
         public Albums _albums;
         public Albums Albums
         {
@@ -23,13 +24,15 @@ namespace TypeUser.ViewModel
                 OnPropertyChanged();
             }
         }
-        public async void OneAlbum(int id)
+        public async void LoadOneAlbum(int id)
         {
+            Albums = new Albums();
             string ApiUrl = "https://jsonplaceholder.typicode.com/albums/" + id.ToString();
             var uri = new Uri(ApiUrl);
             HttpClient client = new HttpClient();
             var reponse = await client.GetStringAsync(uri);
             var contente = JsonConvert.DeserializeObject<Albums>(reponse);
+            Albums = contente;
         }
     }
 }
